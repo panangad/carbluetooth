@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+	<config>
+		<model>
+			<desc>Silverlit Helicopter</desc> <!-- 模型名称 -->
+			<name>APPS_airplane</name> <!-- 蓝牙模块名称 -->
+			<protocol>
+				<byteTotal>5</byteTotal><!-- 总共几个字节 -->
+				<header>x</header><!-- 协议头 -->
+				<reverse>0</reverse><!-- MSB - LSB -->
+				<bytes>
+					<byte>
+						<desc>matchByte</desc>
+						<index>0</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>3</max>	 <!-- 最大值 -->
+						<mid>1</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>6</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>rotorByte</desc>
+						<index>1</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>128</max>	 <!-- 最大值 -->
+						<mid>64</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>pitchByte</desc>
+						<index>2</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>255</max>	 <!-- 最大值 -->
+						<mid>127</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>yawByte</desc>
+						<index>3</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>255</max>	 <!-- 最大值 -->
+						<mid>127</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>trimerByte</desc>
+						<index>4</index> <!-- 第几个字节 -->
+						<begin>3</begin> <!-- 开始位 -->
+						<end>0</end> 	 <!-- 结束位 -->
+						<max>15</max>	 <!-- 最大值 -->
+						<mid>8</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>lightByte</desc>
+						<index>4</index> <!-- 第几个字节 -->
+						<begin>4</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>7</max>	 <!-- 最大值 -->
+						<mid>3</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>5</shift> <!-- 左移位数 -->
+					</byte>
+				</bytes>
+				
+			</protocol>
+		</model>
+	</config>
+	
+	<config>
+		<model>
+			<desc>XXX Helicopter</desc> <!-- 模型名称 -->
+			<name>XXX</name> <!-- 蓝牙模块名称 -->
+			<protocol>
+				<byteTotal>9</byteTotal><!-- 总共几个字节 -->
+				<header></header><!-- 协议头 -->
+				<reverse>0</reverse><!-- MSB -> LSB -->
+				<bytes>
+					<byte>
+						<desc>headByte</desc>
+						<index>0</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>170</max>	 <!-- 最大值 -->
+						<mid>0</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>IDByte</desc>
+						<index>1</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>254</max>	 <!-- 最大值 -->
+						<mid>127</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>rotorByte</desc>
+						<index>2</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>112</max>	 <!-- 最大值 -->
+						<mid>56</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>trimerByte</desc>
+						<index>3</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>60</max>	 <!-- 最大值 -->
+						<mid>0</mid>	 <!-- 中间值 -->
+						<min>-60</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>yawByte</desc>
+						<index>4</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>31</max>	 <!-- 最大值 -->
+						<mid>0</mid>	 <!-- 中间值 -->
+						<min>-31</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>pitchByte</desc>
+						<index>5</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>7</max>	 <!-- 最大值 -->
+						<mid>0</mid>	 <!-- 中间值 -->
+						<min>-7</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>controlByte</desc>
+						<index>6</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>0</max>	 <!-- 最大值 -->
+						<mid>0</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>backupByte</desc>
+						<index>7</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>0</max>	 <!-- 最大值 -->
+						<mid>0</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>tailByte</desc>
+						<index>8</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>187</max>	 <!-- 最大值 -->
+						<mid>0</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+				</bytes>
+				
+			</protocol>
+		</model>
+	</config>
+
+	<config>
+		<model>
+			<desc>Weccan Helicopter</desc> <!-- 模型名称 -->
+			<name>WECCAN i737</name> <!-- 蓝牙模块名称 -->
+			<protocol>
+				<byteTotal>6</byteTotal><!-- 总共几个字节 -->
+				<header>0x</header><!-- 协议头 -->
+				<reverse>1</reverse><!-- MSB -> LSB -->
+				<bytes>
+					<byte>
+						<desc>unknownByte</desc>
+						<index>0</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>3</end> 	 <!-- 结束位 -->
+						<max>15</max>	 <!-- 最大值 -->
+						<mid>8</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>fightByte</desc>
+						<index>0</index> <!-- 第几个字节 -->
+						<begin>4</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>15</max>	 <!-- 最大值 -->
+						<mid>8</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>4</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>trimerByte</desc>
+						<index>1</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>32</max>	 <!-- 最大值 -->
+						<mid>16</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>yawByte</desc>
+						<index>2</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>255</max>	 <!-- 最大值 -->
+						<mid>127</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>pitchByte</desc>
+						<index>3</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>255</max>	 <!-- 最大值 -->
+						<mid>127</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>rotorByte</desc>
+						<index>4</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>255</max>	 <!-- 最大值 -->
+						<mid>127</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					
+					<byte>
+						<desc>trimerFlagByte</desc>
+						<index>5</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>1</end> 	 <!-- 结束位 -->
+						<max>3</max>	 <!-- 最大值 -->
+						<mid>2</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>yawFlagByte</desc>
+						<index>5</index> <!-- 第几个字节 -->
+						<begin>2</begin> <!-- 开始位 -->
+						<end>3</end> 	 <!-- 结束位 -->
+						<max>3</max>	 <!-- 最大值 -->
+						<mid>2</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>2</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>pitchFlagByte</desc>
+						<index>5</index> <!-- 第几个字节 -->
+						<begin>4</begin> <!-- 开始位 -->
+						<end>5</end> 	 <!-- 结束位 -->
+						<max>3</max>	 <!-- 最大值 -->
+						<mid>2</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>4</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>matchByte</desc>
+						<index>5</index> <!-- 第几个字节 -->
+						<begin>6</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>3</max>	 <!-- 最大值 -->
+						<mid>2</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>6</shift> <!-- 左移位数 -->
+					</byte>
+				</bytes>
+				
+			</protocol>
+		</model>
+	</config>
+	
+	<config>
+		<model>
+			<desc>Silverlit BTFerrari</desc> <!-- 模型名称 -->
+			<name>APPS_Car</name> <!-- 蓝牙模块名称 -->
+			<protocol>
+				<byteTotal>5</byteTotal><!-- 总共几个字节 -->
+				<header>r</header><!-- 协议头 -->
+				<reverse>1</reverse><!-- MSB - LSB -->
+				<bytes> 
+					<byte>
+						<desc>matchByte</desc>
+						<index>4</index> <!-- 第几个字节 -->
+						<begin>6</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>3</max>	 <!-- 最大值 -->
+						<mid>1</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>6</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>rotorByte</desc>
+						<index>3</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>255</max>	 <!-- 最大值 -->
+						<mid>127</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>pitchByte</desc>
+						<index>2</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>255</max>	 <!-- 最大值 -->
+						<mid>127</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>yawByte</desc>
+						<index>1</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>255</max>	 <!-- 最大值 -->
+						<mid>127</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>trimerByte</desc>
+						<index>0</index> <!-- 第几个字节 -->
+						<begin>0</begin> <!-- 开始位 -->
+						<end>3</end> 	 <!-- 结束位 -->
+						<max>15</max>	 <!-- 最大值 -->
+						<mid>7</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>0</shift> <!-- 左移位数 -->
+					</byte>
+					<byte>
+						<desc>lightByte</desc>
+						<index>0</index> <!-- 第几个字节 -->
+						<begin>4</begin> <!-- 开始位 -->
+						<end>7</end> 	 <!-- 结束位 -->
+						<max>15</max>	 <!-- 最大值 -->
+						<mid>7</mid>	 <!-- 中间值 -->
+						<min>0</min>     <!-- 最小值 -->
+						<shift>4</shift> <!-- 左移位数 -->
+					</byte>
+				</bytes>
+				
+			</protocol>
+		</model>
+	</config>
+
+</configs>
