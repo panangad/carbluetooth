@@ -33,6 +33,17 @@ public class ConnectThread extends Thread{
 
     }
 
+    public void move(float ya){
+
+        bdata = getData(100,ya);
+        try {
+            mt.sendData(bTSocket,bdata);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     public boolean connect(BluetoothDevice bTDevice, UUID mUUID) throws IOException {
 
@@ -54,16 +65,12 @@ public class ConnectThread extends Thread{
             mt = new ManageConnectThread();
 
 
-
-
-            ManageConnectThread mt = new ManageConnectThread();
-
-            for(int i=0; i<100;i++){
-                bdata = getData(80,0.0f);
-                mt.sendData(bTSocket,bdata);
-                Log.d("CONNECTTHREAD",String.valueOf(i));
-                Thread.sleep(50);
-            }
+//            for(int i=0; i<100;i++){
+//                bdata = getData(80,0.0f);
+//                mt.sendData(bTSocket,bdata);
+//                Log.d("CONNECTTHREAD",String.valueOf(i));
+//                Thread.sleep(50);
+//            }
 
 //            for(int i=0; i<55;i++){
 //                bdata = getData(0.0f,127.5f);

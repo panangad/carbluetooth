@@ -25,6 +25,7 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -67,6 +68,7 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
     private BluetoothAdapter bTAdapter;
     private BluetoothDevice mydevice;
     private ConnectThread ct;
+    private int iii=0;
 
     public MainActivity() {
         Log.i(TAG, "Instantiated new " + this.getClass());
@@ -102,14 +104,19 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
 
         }
 
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+
+        StrictMode.setThreadPolicy(policy);
+
         ct = new ConnectThread(this);
         UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
-//        try {
-//            ct.connect(mydevice, MY_UUID);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            ct.connect(mydevice, MY_UUID);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         //end bluetooth
 
@@ -248,6 +255,19 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
             double bsize = res[0];
             double xx = res[1];
             double yy = res[2];
+            if(bsize > 0) {
+                iii += 1;
+                if (iii%10 == 0) {
+
+                    int pv = 320;
+                    int rng = 40;
+                    if(xx < pv - rng)
+                        ct.move(77.5f);
+                    else if (xx > pv + rng)
+                        ct.move(177.5f);
+                }
+            }
+
             if(bsize > 0)
                 Imgproc.putText(mRgba, String.valueOf(bsize)+"("+String.valueOf(xx)+","+String.valueOf(yy)+")", new Point(10, 50), 3, 1, new Scalar(255, 0, 0, 255), 2);
         }
