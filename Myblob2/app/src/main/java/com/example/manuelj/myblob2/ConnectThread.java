@@ -27,15 +27,17 @@ public class ConnectThread extends Thread{
     public DataOutputStream out;
     public DataInputStream in;
     private ManageConnectThread mt;
+    public boolean ready=false;
 
     ConnectThread(Context context){
         convertor = new ProtocolConvertor().initConfig(context.getResources().openRawResource(R.raw.config), "Silverlit BTFerrari");
 
     }
 
-    public void move(float ya){
-
-        bdata = getData(100,ya);
+    public void move(float pt, float ya){
+        if(!ready)
+            return;
+        bdata = getData(pt,ya);
         try {
             mt.sendData(bTSocket,bdata);
         } catch (IOException e) {
@@ -97,10 +99,11 @@ public class ConnectThread extends Thread{
 
 
 
-            bdata = getData(157.5f,127.5f);
+            bdata = getData(127.5f,127.5f);
             mt.sendData(bTSocket,bdata);
             Log.d("CONNECTTHREAD","Sent ON");
-            Thread.sleep(1000);
+            Thread.sleep(1);
+            ready = true;
 
         } catch(IOException e) {
             Log.d("CONNECTTHREAD","Could not connect: " + e.toString());
@@ -127,6 +130,7 @@ public class ConnectThread extends Thread{
     }
 
     public byte[] getData(float pitch, float yaw){
+        Log.d("CONNECTTHREAD",String.valueOf(pitch)+","+String.valueOf(yaw));
         Map<String, Float> remoteDataMap = new HashMap();
         remoteDataMap.put(ProtocolConstant.PITCH_KEY, pitch);
         remoteDataMap.put(ProtocolConstant.YAW_KEY, yaw);
