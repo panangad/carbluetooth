@@ -124,11 +124,11 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
         ct = new ConnectThread(this);
         UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
-        try {
-            ct.connect(mydevice, MY_UUID);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            ct.connect(mydevice, MY_UUID);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         //end bluetooth
 
@@ -181,7 +181,7 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
         //(38.609375, 236.109375, 220.453125, 0.0)
 
 
-        mBlobColorHsv.val[0] = 40;
+        mBlobColorHsv.val[0] = 39;
         mBlobColorHsv.val[1] = 255;
         mBlobColorHsv.val[2] = 255;
         mBlobColorHsv.val[3] = 0.0;
@@ -270,67 +270,67 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
 
 
 
-            if(bsize > 0) {
-
-                if (true) {
-
-                    if(bsize > 120){
-                        ct.move(rspeed, ntr);
-                        iii = 0;
-                    }
-                    else if(bsize > 80 && bsize < 130){
-                        ct.move(ntr, ntr);
-                        iii = 0;
-                    }
-                    else if(xx < pv - rng) {
-                        ct.move(spd, ntr - pw);
-                        iii = 0;
-                    }
-                    else if (xx > pv + rng) {
-                        ct.move(spd, ntr + pw);
-                        iii = 0;
-                    }
-                    else if(xx < pv - rng2) {
-                        ct.move(spd, ntr - pw2);
-                        iii = 0;
-                    }
-                    else if (xx > pv + rng2) {
-                        ct.move(spd, ntr + pw2);
-                        iii = 0;
-                    }
-                    else if(xx < pv - rng3) {
-                        ct.move(spd, ntr - pw3);
-                        iii = 0;
-                    }
-                    else if (xx > pv + rng3) {
-                        ct.move(spd, ntr + pw3);
-                        iii = 0;
-                    }
-                    else if(bsize < 50 && bsize > 7){
-                        ct.move(spd, ntr);
-                        iii = 0;
-                    }
-                    else if(bsize < 70 && bsize > 7){
-                        ct.move(spd2, ntr);
-                        iii = 0;
-                    }
-                    else
-                        iii += 1;
-                }
-
-            }
-            else
-                iii += 1;
-
-            if(iii > 5)
-            {
-                iii = 0;
-                ct.move(ntr,ntr);
-//                if((int)Math.random()*10 == 3)
-//                    ct.move(90,0);
-//                else if((int)Math.random()*10 == 3)
-//                    ct.move(90,200);
-            }
+//            if(bsize > 0) {
+//
+//                if (true) {
+//
+//                    if(bsize > 120){
+//                        ct.move(rspeed, ntr);
+//                        iii = 0;
+//                    }
+//                    else if(bsize > 80 && bsize < 130){
+//                        ct.move(ntr, ntr);
+//                        iii = 0;
+//                    }
+//                    else if(xx < pv - rng) {
+//                        ct.move(spd, ntr - pw);
+//                        iii = 0;
+//                    }
+//                    else if (xx > pv + rng) {
+//                        ct.move(spd, ntr + pw);
+//                        iii = 0;
+//                    }
+//                    else if(xx < pv - rng2) {
+//                        ct.move(spd, ntr - pw2);
+//                        iii = 0;
+//                    }
+//                    else if (xx > pv + rng2) {
+//                        ct.move(spd, ntr + pw2);
+//                        iii = 0;
+//                    }
+//                    else if(xx < pv - rng3) {
+//                        ct.move(spd, ntr - pw3);
+//                        iii = 0;
+//                    }
+//                    else if (xx > pv + rng3) {
+//                        ct.move(spd, ntr + pw3);
+//                        iii = 0;
+//                    }
+//                    else if(bsize < 50 && bsize > 7){
+//                        ct.move(spd, ntr);
+//                        iii = 0;
+//                    }
+//                    else if(bsize < 70 && bsize > 7){
+//                        ct.move(spd2, ntr);
+//                        iii = 0;
+//                    }
+//                    else
+//                        iii += 1;
+//                }
+//
+//            }
+//            else
+//                iii += 1;
+//
+//            if(iii > 5)
+//            {
+//                iii = 0;
+//                ct.move(ntr,ntr);
+////                if((int)Math.random()*10 == 3)
+////                    ct.move(90,0);
+////                else if((int)Math.random()*10 == 3)
+////                    ct.move(90,200);
+//            }
 
             if(bsize > 0)
                 Imgproc.putText(mRgba, String.valueOf(bsize)+"("+String.valueOf(xx)+","+String.valueOf(yy)+")", new Point(10, 50), 3, 1, new Scalar(255, 0, 0, 255), 2);
