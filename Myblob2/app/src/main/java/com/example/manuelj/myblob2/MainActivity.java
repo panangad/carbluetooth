@@ -46,12 +46,17 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
     private Size                 SPECTRUM_SIZE;
     private Scalar               CONTOUR_COLOR;
 
-    int pv = 320;
+    int pv = 400;
     int rng = 100;
+    float pw = 125f;
+    int rng2 = 50;
+    float pw2 = 50f;
+    int rng3 = 30;
+    float pw3 = 25f;
     float ntr = 127.5f;
-    float pw = 90f;
-    float spd = 90f;
-    float rspeed = 150f;
+    float spd = 95f;
+    float spd2 = 95f;
+    float rspeed = 165f;
 
     private CameraBridgeViewBase mOpenCvCameraView;
 
@@ -94,7 +99,7 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.color_blob_detection_activity_surface_view);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
-        mOpenCvCameraView.setMaxFrameSize(800,600);
+        mOpenCvCameraView.setMaxFrameSize(1280,720);
 
 
         //bluetooth
@@ -285,8 +290,28 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
                         ct.move(spd, ntr + pw);
                         iii = 0;
                     }
-                    else if(bsize < 60 && bsize > 10){
+                    else if(xx < pv - rng2) {
+                        ct.move(spd, ntr - pw2);
+                        iii = 0;
+                    }
+                    else if (xx > pv + rng2) {
+                        ct.move(spd, ntr + pw2);
+                        iii = 0;
+                    }
+                    else if(xx < pv - rng3) {
+                        ct.move(spd, ntr - pw3);
+                        iii = 0;
+                    }
+                    else if (xx > pv + rng3) {
+                        ct.move(spd, ntr + pw3);
+                        iii = 0;
+                    }
+                    else if(bsize < 50 && bsize > 7){
                         ct.move(spd, ntr);
+                        iii = 0;
+                    }
+                    else if(bsize < 70 && bsize > 7){
+                        ct.move(spd2, ntr);
                         iii = 0;
                     }
                     else
@@ -300,7 +325,11 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
             if(iii > 5)
             {
                 iii = 0;
-                ct.move(105,0);
+                ct.move(ntr,ntr);
+//                if((int)Math.random()*10 == 3)
+//                    ct.move(90,0);
+//                else if((int)Math.random()*10 == 3)
+//                    ct.move(90,200);
             }
 
             if(bsize > 0)

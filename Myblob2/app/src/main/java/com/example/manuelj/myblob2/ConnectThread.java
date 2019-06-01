@@ -35,7 +35,7 @@ public class ConnectThread extends Thread{
     }
 
     public void move(float pt, float ya){
-        if(!ready)
+        if(!ready )
             return;
         bdata = getData(pt,ya);
         try {
