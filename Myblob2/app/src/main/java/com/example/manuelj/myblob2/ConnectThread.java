@@ -35,9 +35,10 @@ public class ConnectThread extends Thread{
     }
 
     public void move(float pt, float ya){
+        bdata = getData(pt,ya);
         if(!ready )
             return;
-        bdata = getData(pt,ya);
+
         try {
             mt.sendData(bTSocket,bdata);
         } catch (IOException e) {
